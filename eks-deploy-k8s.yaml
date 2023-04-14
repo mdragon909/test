@@ -1,9 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-springboot-deployment
+  labels:
+    app: springboot-app
+  name: springboot-app
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: springboot-app
@@ -14,10 +16,12 @@ spec:
     spec:
       containers:
       - name: my-springboot-app
-        image: myacrrepo3210.azurecr.io/myacrrepo3210:latest
+        image: 211223789150.dkr.ecr.us-east-1.amazonaws.com/my-springboot-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
+          name: http
+          protocol: TCP
 # service type loadbalancer       
 ---
 apiVersion: v1
