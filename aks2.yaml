@@ -24,7 +24,7 @@ kind: Service
 metadata:
   name: springboot-app-service
 spec:
-  selector:
+    selector:
     app: springboot-app
   ports:
   - name: http
