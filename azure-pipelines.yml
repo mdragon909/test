@@ -1,4 +1,12 @@
 # Docker
+- task: Docker@2
+  inputs:
+    repository: 'mdrag'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+- task: AzureFunctionOnKubernetes@1
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
