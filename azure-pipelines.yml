@@ -41,7 +41,7 @@ stages:
           $(tag)
     - task: ECRPushImage@1
       inputs:
-        awsCredentials: 'my_aws_conn'
+        aksCredentials: 'my_aks_conn'
         regionName: 'us-east-1'
         imageSource: 'imageid'
         sourceImageId: '$(imageName):$(tag)'
